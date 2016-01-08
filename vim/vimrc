@@ -1,0 +1,11 @@
+"print a line under the cursor
+set cursorline
+
+"work only in decimal
+set nrformats=
+
+"set the ruler
+set ruler
+
+"set matchpairs
+set matchpairs+=<:>,<<:>>
