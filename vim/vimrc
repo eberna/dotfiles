@@ -1,3 +1,12 @@
+" Pathogen load
+filetype off
+
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
+
 "print a line under the cursor
 set cursorline
 
@@ -7,5 +16,4 @@ set nrformats=
 "set the ruler
 set ruler
 
-"set matchpairs
-set matchpairs+=<:>,<<:>>
+:colorscheme desert
