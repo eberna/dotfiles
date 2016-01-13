@@ -17,3 +17,10 @@ set nrformats=
 set ruler
 
 :colorscheme desert
+"enable pymode run and bind it to \r
+let g:pymode_run = 1
+let g:pymode_run_bind = '<leader>r'
+
+"bind \R reload vimrc
+nnoremap <Leader>R :source $MYVIMRC<CR>
+
