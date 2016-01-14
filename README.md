@@ -1,4 +1,4 @@
-# dotconf
+# dotfiles
 My .file config
 
 for vim file
