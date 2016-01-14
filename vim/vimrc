@@ -16,7 +16,9 @@ set nrformats=
 "set the ruler
 set ruler
 
+"set vim colorscheme
 :colorscheme desert
+
 "enable pymode run and bind it to \r
 let g:pymode_run = 1
 let g:pymode_run_bind = '<leader>r'
@@ -24,3 +26,14 @@ let g:pymode_run_bind = '<leader>r'
 "bind \R reload vimrc
 nnoremap <Leader>R :source $MYVIMRC<CR>
 
+"display status line always
+set laststatus=2
+
+"256 colors
+set t_Co=256
+
+"vim-airline theme
+let g:airline_theme="dark"
+
+"bind /
+nnoremap <Leader>p :NERDTreeToggle<CR>
