@@ -1,0 +1,6 @@
+use
+http://www.xorpd.net/blog/vim_python3_install.html
+
+use
+sudo checkinstall --fstrans=no --install=yes
+
