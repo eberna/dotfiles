@@ -7,6 +7,9 @@ call pathogen#helptags()
 filetype plugin indent on
 syntax on
 
+"make backspace behave in a sane manner
+set backspace=indent,eol,start
+
 "print a line under the cursor
 set cursorline
 
@@ -18,6 +21,12 @@ set ruler
 
 "set vim colorscheme
 :colorscheme desert
+
+"enable mouse
+if has('mouse')
+    set mouse=a
+    set ttymouse=xterm2
+endif
 
 
 "bind \R reload vimrc
