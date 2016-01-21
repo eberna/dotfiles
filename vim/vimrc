@@ -22,10 +22,12 @@ set ruler
 "set vim colorscheme
 :colorscheme desert
 
-"enable mouse
+"disable mouse and bind for enabling  and disabling
 if has('mouse')
-    set mouse=a
+    set mouse=
     set ttymouse=xterm2
+    nnoremap <Leader>m :set mouse=a<CR>
+    nnoremap <Leader>M :set mouse=<CR>
 endif
 
 
