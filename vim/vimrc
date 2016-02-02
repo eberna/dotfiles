@@ -4,6 +4,7 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 
+set nocompatible
 filetype plugin indent on
 syntax on
 
@@ -66,3 +67,8 @@ nnoremap <Leader>p :NERDTreeToggle<CR>
 
 "generate tmux bar airline stile
 nnoremap <Leader>t :TmuxlineSnapshot! ~/.tmux/tmuxline.tmux.conf<CR>
+
+
+"vimwiki bind key
+:nmap <Leader>wq <Plug>VimwikiVSplitLink
+:nmap <Leader>we <Plug>VimwikiSplitLink
