@@ -55,6 +55,9 @@ let g:pymode_run = 1
 let g:pymode_run_bind = '<leader>r'
 let g:pymode_python = 'python3'
 
+"disable autocomplete documentation
+set completeopt=menu
+
 "vim-airline theme
 let g:airline_theme="dark"
 
