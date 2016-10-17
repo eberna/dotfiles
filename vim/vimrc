@@ -25,7 +25,9 @@ set wildmode=longest,list,full
 set wildmenu
 
 "set vim colorscheme
-:colorscheme desert
+set background=dark
+:colorscheme solarized
+let g:solarized_termcolors=256
 
 "disable mouse and bind for enabling  and disabling
 if has('mouse')
