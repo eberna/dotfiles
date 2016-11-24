@@ -73,6 +73,11 @@ nnoremap <Leader>p :NERDTreeToggle<CR>
 "generate tmux bar airline stile
 nnoremap <Leader>t :TmuxlineSnapshot! ~/.tmux/tmuxline.tmux.conf<CR>
 
+"Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+"Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 "vimwiki bind key
 :nmap <Leader>wq <Plug>VimwikiVSplitLink
