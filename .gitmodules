@@ -22,3 +22,6 @@
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
+[submodule "vim/pack/minpac/opt/minpac"]
+	path = vim/pack/minpac/opt/minpac
+	url = https://github.com/k-takata/minpac.git

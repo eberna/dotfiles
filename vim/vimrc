@@ -1,3 +1,15 @@
+" Minpack load
+packadd minpac
+
+call minpac#init()
+
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+"
+" Add other plugins here.
+call minpac#add('morhetz/gruvbox')
+
+
 " Pathogen load
 filetype off
 
@@ -7,6 +19,8 @@ call pathogen#helptags()
 set nocompatible
 filetype plugin indent on
 syntax on
+set termguicolors
+
 
 "make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -25,7 +39,12 @@ set wildmode=longest,list,full
 set wildmenu
 
 "set vim colorscheme
-:colorscheme desert
+":colorscheme desert
+"set background=light
+"silent! colorscheme solarized8
+colorscheme gruvbox
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 "disable mouse and bind for enabling  and disabling
 if has('mouse')
