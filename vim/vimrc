@@ -8,6 +8,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 "
 " Add other plugins here.
 call minpac#add('morhetz/gruvbox')
+call minpac#add('ledger/vim-ledger')
 
 
 " Pathogen load
