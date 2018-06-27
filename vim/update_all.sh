@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# update pathogen
-echo "[*] Updating pathogen.."
-./update_pathogen.sh
-
 # update all git submodules
 echo "[*] Updating submodules.."
 git submodule update --init --recursive

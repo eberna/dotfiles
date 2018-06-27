@@ -1,27 +1,6 @@
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/tmuxline.vim"]
-	path = vim/bundle/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim.git
-[submodule "vim/bundle/--force"]
-	path = vim/bundle/--force
-	url = https://github.com/klen/python-mode.git
-[submodule "vim/bundle/python-mode"]
-	path = vim/bundle/python-mode
-	url = https://github.com/klen/python-mode.git
-[submodule "vim/bundle/vimwiki"]
-	path = vim/bundle/vimwiki
-	url = https://github.com/vimwiki/vimwiki.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
-[submodule "vim/pack/minpac/opt/minpac"]
-	path = vim/pack/minpac/opt/minpac
-	url = https://github.com/k-takata/minpac.git

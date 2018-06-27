@@ -1,27 +1,31 @@
-" Minpack load
-packadd minpac
+" Vim Plug plugin
+call plug#begin('~/.vim/plugged')
 
-call minpac#init()
+Plug 'morhetz/gruvbox'
+Plug 'ledger/vim-ledger'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'plasticboy/vim-markdown'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'edkolev/tmuxline.vim'
+Plug 'klen/python-mode'
+Plug 'vimwiki/vimwiki'
 
-" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-"
-" Add other plugins here.
-call minpac#add('morhetz/gruvbox')
-call minpac#add('ledger/vim-ledger')
-
-
-" Pathogen load
-filetype off
-
-call pathogen#infect()
-call pathogen#helptags()
+" Initialize plugin system
+call plug#end()
 
 set nocompatible
 filetype plugin indent on
 syntax on
+set hidden
 set termguicolors
 
+"show existing tab with 4 spaces width
+set tabstop=4
+"when indenting with '>', use 4 spaces width
+set shiftwidth=4
+"On pressing tab, insert 4 spaces
+set expandtab
 
 "make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -47,7 +51,9 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "disable mouse and bind for enabling  and disabling
 if has('mouse')
     set mouse=
+    if !has('nvim')
     set ttymouse=xterm2
+    endif
     nnoremap <Leader>m :set mouse=a<CR>
     nnoremap <Leader>M :set mouse=<CR>
 endif
@@ -60,7 +66,7 @@ nnoremap <Leader>R :source $MYVIMRC<CR>
 set laststatus=2
 
 "256 colors
-set t_Co=256
+"set t_Co=256
 
 "bind \s to save
 noremap <Leader>s :update<CR>
