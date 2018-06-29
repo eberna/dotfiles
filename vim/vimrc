@@ -79,6 +79,10 @@ set pastetoggle=<Leader>P
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"Update and upgrade Vim Plug
+command! PU PlugUpdate | PlugUpgrade
+
+
 "enable pymode run and bind it to \r
 let g:pymode_run = 1
 let g:pymode_run_bind = '<leader>r'
