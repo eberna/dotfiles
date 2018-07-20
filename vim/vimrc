@@ -8,8 +8,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
-Plug 'klen/python-mode'
 Plug 'vimwiki/vimwiki'
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
 " Initialize plugin system
 call plug#end()
@@ -84,6 +84,8 @@ command! PU PlugUpdate | PlugUpgrade
 
 
 "enable pymode run and bind it to \r
+autocmd FileType python setlocal omnifunc=python3complete#Complete
+let g:python3_host_prog = '/usr/bin/python3'
 let g:pymode_run = 1
 let g:pymode_run_bind = '<leader>r'
 let g:pymode_python = 'python3'
