@@ -82,7 +82,17 @@ noremap <Leader>s :update<CR>
 "bind \p to paste toggle
 set pastetoggle=<Leader>P
 
+" terminal mode escape remap, escape in term mode is ctrl-v esc
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+    tnoremap <C-v><Esc> <Esc>
+endif
 
+" show terminal cursor when in normal mode in red
+if has('nvim')
+    highlight! link TermCursor Cursor
+    highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
+endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
