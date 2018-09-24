@@ -93,9 +93,21 @@ if has('nvim')
     highlight! link TermCursor Cursor
     highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
 endif
+
+" prevent nested nvim remember to set $VISUAL=nvr in bashrc
+if has('nvim') && executable('nvr')
+let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
+nnoremap <silent> <M-F12> :BufExplorer<CR>
+nnoremap <silent> <F12> :bn<CR>
+nnoremap <silent> <S-F12> :bp<CR>
+
 
 "Update and upgrade Vim Plug
 command! PU PlugUpdate | PlugUpgrade
