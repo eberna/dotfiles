@@ -5,10 +5,9 @@ Plug 'morhetz/gruvbox'
 Plug 'ledger/vim-ledger'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'plasticboy/vim-markdown'
-Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
-Plug 'vimwiki/vimwiki'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
@@ -119,6 +118,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:pymode_run = 1
 let g:pymode_run_bind = '<leader>r'
 let g:pymode_python = 'python3'
+let g:pymode_rope_completion = 1
 
 "disable autocomplete documentation
 set completeopt=menu
@@ -137,6 +137,10 @@ let g:airline#extensions#tabline#enabled = 1
 
 "Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+" airline powerline fonts (to install sudo apt-get install fonts-powerline)
+" let g:airline_powerline_fonts = 1
+
 
 "vimwiki bind key
 :nmap <Leader>wq <Plug>VimwikiVSplitLink
