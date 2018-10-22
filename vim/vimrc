@@ -8,7 +8,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+"Plug 'python-mode/python-mode', { 'branch': 'develop' }
+"Plug 'davidhalter/jedi-vim'
+Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Initialize plugin system
@@ -113,12 +115,12 @@ command! PU PlugUpdate | PlugUpgrade
 
 
 "enable pymode run and bind it to \r
-autocmd FileType python setlocal omnifunc=python3complete#Complete
-let g:python3_host_prog = '/usr/bin/python3'
-let g:pymode_run = 1
-let g:pymode_run_bind = '<leader>r'
-let g:pymode_python = 'python3'
-let g:pymode_rope_completion = 1
+"autocmd FileType python setlocal omnifunc=python3complete#Complete
+"let g:python3_host_prog = '/usr/bin/python3'
+"let g:pymode_run = 1
+"let g:pymode_run_bind = '<leader>r'
+"let g:pymode_python = 'python3'
+"let g:pymode_rope_completion = 1
 
 "disable autocomplete documentation
 set completeopt=menu
