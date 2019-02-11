@@ -1,16 +1,17 @@
 " Vim Plug plugin
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-solarized8'
 Plug 'ledger/vim-ledger'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
-"Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 "Plug 'davidhalter/jedi-vim'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Initialize plugin system
@@ -23,11 +24,15 @@ set smartcase
 set nocompatible
 set hidden
 filetype plugin indent on
+set autoindent "Auto indent
+set preserveindent
+set nosmartindent "Messes up Python
 syntax on
 set hidden
 set termguicolors
 " prevent to change cursor shape
 set guicursor=
+set encoding=utf8
 
 "show existing tab with 4 spaces width
 set tabstop=4
@@ -53,7 +58,11 @@ set wildmode=longest,list,full
 set wildmenu
 
 "set vim colorscheme
-colorscheme gruvbox
+"set background=light
+"colorscheme gruvbox
+set background=dark
+colorscheme solarized8
+
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
@@ -82,6 +91,9 @@ noremap <Leader>s :update<CR>
 
 "bind \p to paste toggle
 set pastetoggle=<Leader>P
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! %!sudo tee > /dev/null %
 
 " terminal mode escape remap, escape in term mode is ctrl-v esc
 if has('nvim')
@@ -116,11 +128,18 @@ command! PU PlugUpdate | PlugUpgrade
 
 "enable pymode run and bind it to \r
 "autocmd FileType python setlocal omnifunc=python3complete#Complete
-"let g:python3_host_prog = '/usr/bin/python3'
-"let g:pymode_run = 1
-"let g:pymode_run_bind = '<leader>r'
+let g:python3_host_prog = '/usr/bin/python3'
+let g:pymode_run = 1
+let g:pymode_run_bind = '<leader>r'
 "let g:pymode_python = 'python3'
-"let g:pymode_rope_completion = 1
+let g:pymode = 1
+let g:pymode_lint = 1
+let g:pymode_lint_on_write = 1
+let g:pymode_indent = 1
+let g:pymode_rope_completion = 1
+"not working ??
+let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_completion_bind = '<C-Space>'
 
 "disable autocomplete documentation
 set completeopt=menu
