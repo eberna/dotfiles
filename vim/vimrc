@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'lifepillar/vim-solarized8'
 Plug 'ledger/vim-ledger'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
@@ -13,6 +12,7 @@ Plug 'python-mode/python-mode', { 'branch': 'develop' }
 "Plug 'davidhalter/jedi-vim'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'vimwiki/vimwiki'
 
 " Initialize plugin system
 call plug#end()
@@ -44,9 +44,6 @@ set expandtab
 "make backspace behave in a sane manner
 set backspace=indent,eol,start
 
-"print a line under the cursor
-set cursorline
-
 "work only in decimal
 set nrformats=
 
@@ -65,6 +62,11 @@ colorscheme solarized8
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+"print a line under the cursor
+set cursorline
+hi clear CursorLine
+hi CursorLine gui=underline cterm=underline
 
 "disable mouse and bind for enabling  and disabling
 if has('mouse')
@@ -128,18 +130,21 @@ command! PU PlugUpdate | PlugUpgrade
 
 "enable pymode run and bind it to \r
 "autocmd FileType python setlocal omnifunc=python3complete#Complete
-let g:python3_host_prog = '/usr/bin/python3'
-let g:pymode_run = 1
-let g:pymode_run_bind = '<leader>r'
-"let g:pymode_python = 'python3'
-let g:pymode = 1
-let g:pymode_lint = 1
-let g:pymode_lint_on_write = 1
-let g:pymode_indent = 1
+let g:pymode_python = 'python3'
+let g:pymode_rope = 1
 let g:pymode_rope_completion = 1
-"not working ??
-let g:pymode_rope_complete_on_dot = 1
 let g:pymode_rope_completion_bind = '<C-Space>'
+"let g:python3_host_prog = '/usr/bin/python3'
+"let g:pymode_run = 1
+"let g:pymode_run_bind = '<leader>r'
+"let g:pymode = 1
+"let g:pymode_lint = 1
+"let g:pymode_lint_on_write = 1
+"let g:pymode_indent = 1
+"let g:pymode_rope_completion = 1
+"not working ??
+"let g:pymode_rope_complete_on_dot = 1
+"let g:pymode_rope_completion_bind = '<C-Space>'
 
 "disable autocomplete documentation
 set completeopt=menu
@@ -163,9 +168,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " let g:airline_powerline_fonts = 1
 
 
-"vimwiki bind key
+"vimwiki bind key path and markup
 :nmap <Leader>wq <Plug>VimwikiVSplitLink
 :nmap <Leader>we <Plug>VimwikiSplitLink
+let g:vimwiki_list = [{'path': '~/Documents/notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Fuzzy finder bind key
 nnoremap <C-p> :<C-u>FZF<CR>
