@@ -9,10 +9,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
-"Plug 'davidhalter/jedi-vim'
-"Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'vimwiki/vimwiki'
+Plug 'stephpy/vim-yaml'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-speeddating'
+Plug 'rust-lang/rust.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -55,8 +57,6 @@ set wildmode=longest,list,full
 set wildmenu
 
 "set vim colorscheme
-"set background=light
-"colorscheme gruvbox
 set background=dark
 colorscheme solarized8
 
@@ -78,15 +78,11 @@ if has('mouse')
     nnoremap <Leader>M :set mouse=<CR>
 endif
 
-
 "bind \R reload vimrc
 nnoremap <Leader>R :source $MYVIMRC<CR>
 
 "display status line always
 set laststatus=2
-
-"256 colors
-"set t_Co=256
 
 "bind \s to save
 noremap <Leader>s :update<CR>
@@ -97,6 +93,7 @@ set pastetoggle=<Leader>P
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! %!sudo tee > /dev/null %
 
+" Nvim configs
 " terminal mode escape remap, escape in term mode is ctrl-v esc
 if has('nvim')
     tnoremap <Esc> <C-\><C-n>
@@ -119,14 +116,16 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
-nnoremap <silent> <M-F12> :BufExplorer<CR>
-nnoremap <silent> <F12> :bn<CR>
-nnoremap <silent> <S-F12> :bp<CR>
+nnoremap <silent> <Leader>B :BufExplorer<CR>
+nnoremap <silent> <C-Right> :bn<CR>
+nnoremap <silent> <C-Left>  :bp<CR>
 
 
 "Update and upgrade Vim Plug
 command! PU PlugUpdate | PlugUpgrade
 
+" Enable yaml plugin syntax
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/plugged/vim-yaml/after/syntax/yaml.vim
 
 "enable pymode run and bind it to \r
 "autocmd FileType python setlocal omnifunc=python3complete#Complete
