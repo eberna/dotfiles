@@ -173,5 +173,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:vimwiki_list = [{'path': '~/Documents/notes/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" SpeedDating custom format
+au BufEnter * :SpeedDatingFormat %Y/%m/%d
+
 " Fuzzy finder bind key
 nnoremap <C-p> :<C-u>FZF<CR>
